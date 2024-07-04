@@ -13,7 +13,7 @@ import com.bd.basico.modelo.TblProducto;
 import com.bd.basico.servicio.IProductoServicio;
 
 @Controller
-@RequestMapping("/vistas")
+@RequestMapping("/Vistas")
 public class ProductoController {
 
 	//inyeccion de dependencia...
@@ -23,7 +23,7 @@ public class ProductoController {
 
 			//creamos el metodo listado..
 
-			@GetMapping("ListadoProductos")
+			@GetMapping("/ListadoProductos")
 
 			public String ListadoProductos(Model modelo) {
 
@@ -77,7 +77,7 @@ public class ProductoController {
 
 			//realizamos el mapeo con postmapping
 
-			@PostMapping("/GuardarCliente")
+			@PostMapping("/GuardarProducto")
 
 			public String GuardarAuto(@ModelAttribute TblProducto  producto,Model modelo) {
 
@@ -112,6 +112,7 @@ public class ProductoController {
 			}  //fin del metodo editar...
 			
 			
+			@GetMapping("/eliminar/{id}")
 			public String eliminar(@PathVariable("id") Integer idproducto,Model modelo) {
 
 				//aplicamos inyeccion de dependencia...
